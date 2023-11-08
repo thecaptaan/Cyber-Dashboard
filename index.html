@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="search-container">
+        <input class="search-input" type="text" id="search" autocomplete="off" placeholder="Search" required>
+        <button id="searchBtn">Search</button>
+    </div>
+    <div class="info-container row" id="info">
+        <div class="data-container">
+            <div class="data-infoic row cent">
+                <div class="col cent">
+                    <span class="data-header">Total Group</span>
+                    <span class="data-count" id="groupMonitored">0</span>
+                </div>
+                <div>
+                    <img src="/images/bar-chart.svg" width="40" height="40" alt="">
+                </div>
+            </div>
+            <div class="cent">
+                <!-- <span class="data-statics" id=""> There is <b class="highlight">3%</b> growth in
+                    attack</span> -->
+            </div>
+        </div>
+        <div class="data-container">
+            <div class="data-infoic row cent">
+                <div class="col cent">
+                    <span class="data-header">Total Attack</span>
+                    <span class="data-count" id="totalAttack">0</span>
+                </div>
+                <div>
+                    <img src="/images/bar-chart.svg" width="40" height="40" alt="">
+
+                </div>
+            </div>
+            <div class="cent">
+                <!-- <img src="" alt=""> <span class="data-statics" id="">There is <b class="highlight">3%</b> growth in
+                    attack</span> -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="insertSearchResult"></div>
+   
+    <div class="pointDataContainer row">
+        <div class="lastAndCurrentContainer  col">
+            <div class="chart-header">
+                <h3>A Quick Look</h3>
+            </div>
+            <div class="lastAndCurrentItem row">
+                <p>Posts inserted in the last 24 hours</p>
+                <p id="lastHour"></p>
+            </div>
+            <div class="lastAndCurrentItem row">
+                <p>Post in the current month of <span id="currentMonthSpan"></span></p>
+                <p id="currentMonth"></p>
+            </div>
+            <div class="lastAndCurrentItem row">
+                <p>Posts in the last 90 days</p>
+                <p id="last90Days"></p>
+            </div>
+            <div class="lastAndCurrentItem row">
+                <p> Posts from the beginning of the current year <span id="currentYearSpan"></span></p>
+                <p id="currentYear"></p>
+            </div>
+        </div>
+        <div class="chartBox">
+            <div class="chart-header">
+                <h3>Top Ransom Gang</h3>
+            </div>
+            <canvas id="topRansomGang" width="500"></canvas>
+        </div>
+    </div>
+    <div class="pointDataContainer row">
+        <div class="chartBox">
+            <div class="chart-header row">
+                <h3>One Year Countries Attack Data</h3>
+                <select class="chart-option" name="" id="countrySelect"></select>
+            </div>
+            <canvas id="countrySpecific" width="500"></canvas>
+        </div>
+        <div class="chartBox">
+            <div class="chart-header row">
+                <h3>Time Changeable Data</h3>
+                <select class="chart-option" name="" id="timeframe">
+                    <option value="0">All Time</option>
+                    <option value="1">1 Day</option>
+                    <option value="7">1 Week</option>
+                    <option value="30">1 Month</option>
+                    <option value="365">1 Year</option>
+                </select>
+            </div>
+
+            <canvas id="timeFrameCountry" width="500"></canvas>
+        </div>
+    </div>
+    <div class="wordCloudContainer">
+        <canvas id="wordCount"></canvas>
+    </div>
+    <script src="/index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://unpkg.com/chartjs-chart-wordcloud@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</body>
+
+</html>
